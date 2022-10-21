@@ -18,12 +18,13 @@ Final Project
                                               Picture -> Label ( To describe its info )
            
            
-#  2. DataSet 
+#  2. DataSet s
         - Professor said that you could use some kaggle datasets for training but we did not use that.
           Just take some pictures on our hand ( 10 Restaurants & 10 cafes for 15 pictures for each class )
+          Each pictures have different resolutions , so we take some preprocessing to downscaling their resolutions ( and make rectangular to square )
           And then take some augmentation technique to make datasets larger. ( 20 * 15  -> 20 * 15 * 10 ) - rotate images or shifting images
           
-          So , we used 3000 images for training Network
+          So , we used 3000 images for training Network ( each class have 150 images. left , front , right view images ) 
           
 #  3. Methology
         - Just use tensorflow.kears 's Dense / activation / Conv2D Layers for making Networks.
