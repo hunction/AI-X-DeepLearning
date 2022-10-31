@@ -1,18 +1,31 @@
 # AI-X-DeepLearning
 Final Project
 
-# Title : Classifier For Seneior 
+
+# Title : Classifier For Freshman 
 
 # Members :
           Bae Sung Hyun , Electronic Engineering , hyung50300@gmail.com
           Shin
           Guak
+
+# Index
+          1. Proposal
+          2. DataSets
+          3. Methodology
+          4. Evaluation & Analysis
+          5. Related Works
+          6. Conclusion: Discussion
           
+
           
 #  1. Proposal ( Option A )
         - Motivation : When Senior comes to Univ at first , He does not know what kind of food and drinks did those restaurants & cafes sell.
                        So , We make this Classifier to explain menus and how much is it.
                        For those things, the first step is 'Do classify' with some pictures to descride a place info.
+                                                            
+                                                            +
+                       Make a Simple Deep Neural Network for educating our team member ( Freshman, Electronic Engineering )
                        
         - Start / End ( Pipe line ) : Someone takes a input picture to this software , it will classify label of picture like 'StarBucks'
                                               Picture -> Label ( To describe its info )
@@ -26,7 +39,7 @@ Final Project
           
           So , we used 3000 images for training Network ( each class have 150 images. left , front , right view images ) 
           
-#  3. Methology
+#  3. Methodology
         - Just use tensorflow.kears 's Dense / activation / Conv2D Layers for making Networks.
           we have some experiments that change some hyperparameter such as filter size , activation functions , Network depth etcs.
           
