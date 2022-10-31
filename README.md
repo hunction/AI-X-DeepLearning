@@ -25,13 +25,14 @@ Final Project
                        For those things, the first step is 'Do classify' with some pictures to descride a place info.
                                                             
                                                             +
+                                                            
                        Make a Simple Deep Neural Network for educating our team member ( Freshman, Electronic Engineering )
                        
         - Start / End ( Pipe line ) : Someone takes a input picture to this software , it will classify label of picture like 'StarBucks'
                                               Picture -> Label ( To describe its info )
            
            
-#  2. DataSet s
+#  2. DataSets
         - Professor said that you could use some kaggle datasets for training but we did not use that.
           Just take some pictures on our hand ( 10 Restaurants & 10 cafes for 15 pictures for each class )
           Each pictures have different resolutions , so we take some preprocessing to downscaling their resolutions ( and make rectangular to square )
@@ -42,6 +43,11 @@ Final Project
 #  3. Methodology
         - Just use tensorflow.kears 's Dense / activation / Conv2D Layers for making Networks.
           we have some experiments that change some hyperparameter such as filter size , activation functions , Network depth etcs.
+          And then compare those experiments with other state-of-the-arts networks.
           
+          
+          
+          
+#  4. Evaluation & Analysis
           
           
