@@ -45,9 +45,11 @@ Final Project
           we have some experiments that change some hyperparameter such as filter size , activation functions , Network depth etcs.
           And then compare those experiments with other state-of-the-arts networks.
           
-          
+          a. 
+          b. 
+          c. 
           
           
 #  4. Evaluation & Analysis
-          
+        - 
           
