@@ -1,5 +1,5 @@
 # AI-X-DeepLearning
-Final Project
+### Final Project
 
 
 # Title : 신입생을 위한 학교주변 카페 및 식당 분류
@@ -11,12 +11,12 @@ Final Project
           홍노준 , 전자공학부
 
 # Index
-          1. Proposal
-          2. DataSets
-          3. Methodology
-          4. Evaluation & Analysis
-          5. Related Works
-          6. Conclusion: Discussion
+          ### 1. Proposal
+          ### 2. DataSets
+          ### 3. Methodology
+          ### 4. Evaluation & Analysis
+          ### 5. Related Works
+          ### 6. Conclusion: Discussion
           
 
           
