@@ -28,9 +28,10 @@
                        ( 가게의 Info를 제공하는 것은 어플리케이션의 역할이라 생각되어 어플리케이션은 제작하지 않습니다. )
                               - 단순 모델학습이 수업의 목적이라 생각하여 취지를 벗어난 어플리케이션은 제작하지 않습니다.
                                 추가적으로 가게의 Info 제공은 Dictionary 형태의 구조라고 생각하기 때문에 단순 입력이라고 판단하여 구현하지 않습니다.
-                       ![ex1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ex1.jpg?raw=true)
 
-                       * 예시 ) 대학생 커뮤니티 에브리타임에 학기초마다 올라오는 학교 주변 식당정보                                     
+##  * 예시 ) 대학생 커뮤니티 에브리타임에 학기초마다 올라오는 학교 주변 식당정보
+![ex1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ex1.jpg?raw=true)
+                                     
                                                             +
                                                             
                        실전 데이터를 통한 단순한 분류 네트워크를 생성 및 학습, 기존의 모델과의 비교를 통해 같은 팀원에게 개발 기회를 주고
@@ -48,9 +49,10 @@
 #  2. DataSets
         - Kaggle이나 다른 유명 오픈소스 데이터를 사용할 수 있지만 , 이번 프로젝트의 목적은 오픈소스가 아닌 실전 데이터의 적용이 목적이기 때문에,
           자체적으로 취득한 데이터를 사용하기로 합니다.
-          ![ex2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ex2.PNG?raw=true)
 
-          * 예시 ) 카페누엘의 이미지 총 18장 ( 전체적인 이미지의 갯수를 통일시키기 위해 학습시 3장은 제거 )
+## * 예시 ) 카페누엘의 이미지 총 18장 ( 전체적인 이미지의 갯수를 통일시키기 위해 학습시 3장은 제거 )          
+![ex2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ex2.PNG?raw=true)
+
           
           ( 10개의 식당 & 10개의 카페 for 15 pictures for each class ) - 총 20 * 15 의 300장의 이미지를 오리지널 데이터로 사용합니다.( 좌측 , 우측 , 정면 각 5장씩 )
           각각의 이미지는 각기 다른 팀원이 찍어 해상도가 다르기 때문에 , 이미지의 해상도를 단일화 시키기 위한 전처리를 진행합니다.
@@ -65,29 +67,33 @@
           filter size , activation function , depth 등의 하이퍼 파라미터의 조절을 통한 실험을 진행하였습니다.
           그리고 이미지 분류의 대표적인 모델인 AlexNet , VGG-19 , Resnet50d 과 비교하여 성능을 비교했습니다.
           
-          Experiment Conditions ( 네트워크 구조 및 특이사항 )
-          a. AlexNet
+##          Experiment Conditions ( 네트워크 구조 및 특이사항 )
+
+###          a. AlexNet
                     그림 및 설명
-          b. VGG-19
+
+###          b. VGG-19
                     그림 및 설명
-          c. ResNet
+
+###          c. ResNet
                     그림 및 설명
-          d. Ours
+
+###          d. Ours
                     그림 및 설명
           
           
 #  4. Evaluation & Analysis
-        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
-                              a. AlexNet
+##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
+###                              a. AlexNet
                                         그림 및 설명
-                              b. VGG-19
+###                              b. VGG-19
                                         그림 및 설명
-                              c. ResNet
+###                              c. ResNet
                                         그림 및 설명
-                              d. Ours
+###                              d. Ours
                                         그림 및 설명
         
-        - Analysis : 모델 별 학습 파라미터의 갯수 및 학습시간,  동작시간 기술
+##        - Analysis : 모델 별 학습 파라미터의 갯수 및 학습시간,  동작시간 기술
         
 #  5. Related Works
         - 각각의 논문 제목 기술 및 네트워크 생성시 참조한 블로그
