@@ -5,7 +5,7 @@
 # Title : 신입생을 위한 학교주변 카페 및 식당 분류
 
 # Members :
-          배성현 , 전자공학부 , hyung50300@gmail.com
+          배성현 , 전자공학부 , 2017006635 , hyung50300@gmail.com
           신준하 , 전자공학부 ,
           곽민창 , 전자공학부 , kwarkmc@hanyang.ac.kr
           홍노준 , 전자공학부
@@ -68,28 +68,28 @@ filter size , activation function , depth 등의 하이퍼 파라미터의 조�
           
 ##          Experiment Conditions ( 네트워크 구조 및 특이사항 )
 
-###          a. AlexNet
+###          a. AlexNet - 홍노준
 그림 및 설명
 
-###          b. VGG-19
+###          b. VGG-19 - 배성현
 그림 및 설명
 
-###          c. ResNet
+###          c. ResNet - 신준하
 그림 및 설명
 
-###          d. Ours
+###          d. Ours - 곽민창
 그림 및 설명
           
           
 #  4. Evaluation & Analysis
 ##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
-###                              a. AlexNet
+###                              a. AlexNet - 홍노준
 그림 및 설명
-###                              b. VGG-19
+###                              b. VGG-19 - 배성현
 그림 및 설명
-###                              c. ResNet
+###                              c. ResNet - 신준하
 그림 및 설명
-###                              d. Ours
+###                              d. Ours - 곽민창
 그림 및 설명
         
 ##        - Analysis : 모델 별 학습 파라미터의 갯수 및 학습시간,  동작시간 기술
