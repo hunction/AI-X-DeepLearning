@@ -6,7 +6,7 @@
 
 # Members :
           배성현 , 전자공학부 , 2017006635 , hyung50300@gmail.com
-          신준하 , 전자공학부 ,
+          신준하 , 전자공학부 , 2017006753 , ipip0114@naver.com
           곽민창 , 전자공학부 , 2018038640 , kwarkmc@hanyang.ac.kr
           홍노준 , 전자공학부 , 2022056108 , nojun1573@naver.com
 
