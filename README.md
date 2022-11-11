@@ -72,20 +72,6 @@ filter size , activation function , depth 등의 하이퍼 파라미터의 조�
 그림 및 설명
 
 ###          b. VGG-19 - 배성현
-그림 및 설명
-
-###          c. ResNet - 신준하
-그림 및 설명
-
-###          d. Ours - 곽민창
-그림 및 설명
-          
-          
-#  4. Evaluation & Analysis
-##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
-###                              a. AlexNet - 홍노준
-그림 및 설명
-###                              b. VGG-19 - 배성현
 ![vgg](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg.png?raw=true)
 VGGNet은 VGG 팀에서 개발한 CNN( Convolutional Neural Network )으로써 이전에 ImageNet 대회에서 우승한
 AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 끼치는 영향을 실험했다는 것에 의의가 있다.
@@ -95,6 +81,7 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 결과론적으로 네트워크의 깊이가 단순한게 늘어남에 따라 모델의 성능이 어느 수준까지는 좋아짐을 확인했다.
 
 ![vgg_1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_1.png?raw=true)
+
 전체적인 층의 구조는 다음과 같다.
 0) 인풋: 224 x 224 x 3 이미지(224 x 224 RGB 이미지)를 입력받을 수 있다. 
 
@@ -133,6 +120,20 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 16) 16층(fc3): 1000개의 뉴런으로 구성된다. fc2층의 4096개의 뉴런과 fully connected된다. 출력값들은 softmax 함수로 활성화된다. 1000개의 뉴런으로 구성되었다는 것은 1000개의 클래스로 분류하는 목적으로 만들어진 네트워크란 뜻이다. 
 
 
+
+###          c. ResNet - 신준하
+그림 및 설명
+
+###          d. Ours - 곽민창
+그림 및 설명
+          
+          
+#  4. Evaluation & Analysis
+##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
+###                              a. AlexNet - 홍노준
+그림 및 설명
+###                              b. VGG-19 - 배성현
+그림 및 설명
 ###                              c. ResNet - 신준하
 그림 및 설명
 ###                              d. Ours - 곽민창
