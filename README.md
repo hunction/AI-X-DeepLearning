@@ -73,8 +73,10 @@ AlexNet은 2012년에 열린 ILSVRC 대회에서 TOP 5 test error 15.4%를 기�
 
 AlexNet의 구조는 LeNet-5와 크게 다르지 않다. 위아래로 filter가 절반씩 나뉘어 2개의 GPU로 병렬연산을 수행하는 것이 가장 큰 특징이라고 할 수 있다. 총 8개의 레이어로 구성되어 있으며, 부분적으로 max-pooling가 적용된 Convolution layer가 5개, fully-connected layers 3개로 구성되어있다. 2, 4, 5번째 Convolution layer는 전 단계에서 같은 채널의 특성맵만 연결되어 있는 반면에, 3번째 Convolution layer는 전 단계의 두 채널의 특성 맵과 모두 연결되어있다. Input image는 RGB 이미지로 224×224×3이다.
 ![Alexnet1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Alexnet1.png)
+
 AlexNet을 자세히 살펴보면 다음과 같이 [Input layer]-[Conv1]-[MaxPool1]-[Norm1]-[Conv2]-[MaxPool2]-[Norm2]-[Conv3]-[Conv4]-[Conv5]-[MaxPool3]-[FC1]-[FC2]-[Output layer] 로 구성되어 있다. 여기서 Norm은 수렴속도를 높이기 위해 local response normalization을 하는 것으로 이 local response normalization은 특성맵의 차원을 변화시키지 않는다는 특징을 가지고 있다.
-(이미지 2)
+![Alexnet2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Alexnet2.png)
+
 전체적인 층의 구조는 다음과 같으며 Input image는 RGB 이미지로 224×224×3이다.
 
 1. 1층 (Convolution layer) : 96개의 11 x 11 x 3 필터커널로 입력 영상을 컨볼루션해준다. 컨볼루션 stride를 4로 설정했고, zero-padding은 사용하지 않았다. zero-padding은 컨볼루션으로 인해 특성맵의 사이즈가 축소되는 것을 방지하기 위해, 또는 축소되는 정도를 줄이기 위해 영상의 가장자리 부분에 0을 추가하는 것이다. 결과적으로 55 x 55 x 96 특성맵(96장의 55 x 55 사이즈 특성맵들)이 산출된다. 그 다음에 ReLU 함수로 활성화해준다. 이어서 3 x 3 overlapping max pooling이 stride 2로 시행된다. 그 결과 27 x 27 x 96 특성맵을 갖게 된다. 그 다음에는 수렴 속도를 높이기 위해 local response normalization이 시행된다. local response normalization은 특성맵의 차원을 변화시키지 않으므로, 특성맵의 크기는 27 x 27 x 96으로 유지된다.
