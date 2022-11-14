@@ -69,7 +69,31 @@ filter size , activation function , depth 등의 하이퍼 파라미터의 조�
 ##          Experiment Conditions ( 네트워크 구조 및 특이사항 )
 
 ###          a. AlexNet - 홍노준
-그림 및 설명
+AlexNet은 2012년에 열린 ILSVRC 대회에서 TOP 5 test error 15.4%를 기록해 1위를 차지란 네트워크로 CNN의 우수함을 전세계에 입증한 네트워크이다. AlexNet 네트워크이후로 CNN 구조의 GPU 구현과 dropout 적용이 보편화되었다.
+
+AlexNet의 구조는 LeNet-5와 크게 다르지 않다. 위아래로 filter가 절반씩 나뉘어 2개의 GPU로 병렬연산을 수행하는 것이 가장 큰 특징이라고 할 수 있다. 총 8개의 레이어로 구성되어 있으며, 부분적으로 max-pooling가 적용된 Convolution layer가 5개, fully-connected layers 3개로 구성되어있다. 2, 4, 5번째 Convolution layer는 전 단계에서 같은 채널의 특성맵만 연결되어 있는 반면에, 3번째 Convolution layer는 전 단계의 두 채널의 특성 맵과 모두 연결되어있다. Input image는 RGB 이미지로 224×224×3이다.
+(이미지 1)
+AlexNet을 자세히 살펴보면 다음과 같이 [Input layer]-[Conv1]-[MaxPool1]-[Norm1]-[Conv2]-[MaxPool2]-[Norm2]-[Conv3]-[Conv4]-[Conv5]-[MaxPool3]-[FC1]-[FC2]-[Output layer] 로 구성되어 있다. 여기서 Norm은 수렴속도를 높이기 위해 local response normalization을 하는 것으로 이 local response normalization은 특성맵의 차원을 변화시키지 않는다는 특징을 가지고 있다.
+(이미지 2)
+전체적인 층의 구조는 다음과 같으며 Input image는 RGB 이미지로 224×224×3이다.
+
+1. 1층 (Convolution layer) : 96개의 11 x 11 x 3 필터커널로 입력 영상을 컨볼루션해준다. 컨볼루션 stride를 4로 설정했고, zero-padding은 사용하지 않았다. zero-padding은 컨볼루션으로 인해 특성맵의 사이즈가 축소되는 것을 방지하기 위해, 또는 축소되는 정도를 줄이기 위해 영상의 가장자리 부분에 0을 추가하는 것이다. 결과적으로 55 x 55 x 96 특성맵(96장의 55 x 55 사이즈 특성맵들)이 산출된다. 그 다음에 ReLU 함수로 활성화해준다. 이어서 3 x 3 overlapping max pooling이 stride 2로 시행된다. 그 결과 27 x 27 x 96 특성맵을 갖게 된다. 그 다음에는 수렴 속도를 높이기 위해 local response normalization이 시행된다. local response normalization은 특성맵의 차원을 변화시키지 않으므로, 특성맵의 크기는 27 x 27 x 96으로 유지된다.
+
+2. 2층 (Convolution layer) : 256개의 5 x 5 x 48 커널을 사용하여 전 단계의 특성맵을 컨볼루션해준다. stride는 1로, zero-padding은 2로 설정했다. 따라서 27 x 27 x 256 특성맵(256장의 27 x 27 사이즈 특성맵)을 얻게 된다. 역시 ReLU 함수로 활성화한다. 그 다음에 3 x 3 overlapping max pooling을 stride 2로 시행한다. 그 결과 13 x 13 x 256 특성맵을 얻게 된다. 그 후 local response normalization이 시행되고, 특성맵의 크기는 13 x 13 x 256으로 그대로 유지된다. 
+
+3. 3층 (Convolution layer) : 384개의 3 x 3 x 256 커널을 사용하여 전 단계의 특성맵을 컨볼루션해준다. stride와 zero-padding 모두 1로 설정한다. 따라서 13 x 13 x 384 특성맵(384장의 13 x 13 사이즈 특성맵)을 얻게 된다. 역시 ReLU 함수로 활성화한다. 
+
+4. 4층 (Convolution layer) : 384개의 3 x 3 x 192 커널을 사용해서 전 단계의 특성맵을 컨볼루션해준다. stride와 zero-padding 모두 1로 설정한다. 따라서 13 x 13 x 384 특성맵(384장의 13 x 13 사이즈 특성맵)을 얻게 된다. 역시 ReLU 함수로 활성화한다. 
+
+5. 5층 (Convolution layer) : 256개의 3 x 3 x 192 커널을 사용해서 전 단계의 특성맵을 컨볼루션해준다. stride와 zero-padding 모두 1로 설정한다. 따라서 13 x 13 x 256 특성맵(256장의 13 x 13 사이즈 특성맵)을 얻게 된다. 역시 ReLU 함수로 활성화한다. 그 다음에 3 x 3 overlapping max pooling을 stride 2로 시행한다. 그 결과 6 x 6 x 256 특성맵을 얻게 된다. 
+
+6. 6층 (Fully connected layer) : 6 x 6 x 256 특성맵을 flatten해서 6 x 6 x 256 = 9216차원의 벡터로 만들어준다. 그것을 여섯번째 레이어의 4096개의 뉴런과 fully connected 해준다. 그 결과를 ReLU 함수로 활성화한다. 
+
+7. 7층 (Fully connected layer) : 4096개의 뉴런으로 구성되어 있다. 전 단계의 4096개 뉴런과 fully connected되어 있다. 출력 값은 ReLU 함수로 활성화된다. 
+
+8. 8층 (Fully connected layer): 1000개의 뉴런으로 구성되어 있다. 전 단계의 4096개 뉴런과 fully connected되어 있다. 1000개 뉴런의 출력값에 softmax 함수를 적용해 1000개 클래스 각각에 속할 확률을 나타낸다.
+
+
 
 ###          b. VGG-19 - 배성현
 ![vgg](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg.png?raw=true)
