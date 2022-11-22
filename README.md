@@ -170,6 +170,8 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 #  5. Related Works
 - 각각의 논문 제목 기술 및 네트워크 생성시 참조한 블로그
 
+AlexNet :        코딩 관련 블로그 - https://bskyvision.com/421, AlexNet 구조 - https://ctkim.tistory.com/120
+
 VGG-19 :            논문분석 블로그 - https://bskyvision.com/504    네트워크 생성 - https://minjoos.tistory.com/6
         
         
