@@ -197,7 +197,7 @@ label은 총 20개로 분류모델을 위해 원핫인코딩을 진행해주었�
 
 학습 결과를 보면 , AlexNet보다 낮은 accuracy와 업데이트가 되지않는 모습을 보인다.
 이는 적은 dataset을 너무 깊은 depth를 통해 구현하였기에 생긴 vanishing gradient 문제라고 판단된다.
-이를 통해 단순한 Task를 위한 모델은 depth의 깊이를 너무 깊게하지 않으며 , 혹은 이후에 다루게 될 ResNet과 같은
+이를 통해 단순한 Task를 위한 모델은 dept를 너무 깊게하지 않으며 , 혹은 이후에 다루게 될 ResNet과 같은
 Technique을 사용해야 한다는 것을 알았다.
 
 ###                              c. ResNet - 신준하
