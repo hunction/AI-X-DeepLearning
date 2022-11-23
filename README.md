@@ -159,33 +159,47 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 ###                              a. AlexNet - 홍노준
 그림 및 설명
 ###                              b. VGG-19 - 배성현
+
 코드 및 실험 결과에 따른 분석으로 진행하였다.
-![vgg_model1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model1.png?raw=true)
+
+![vgg_model1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model1.PNG?raw=true)
+
 실험은 Google Colab을 이용한 Tensorflow framework 내에서 진행하였고 , 기존에 있던 MNIST관련 코드를 변형했기에
 불필요한 라이브러리를 import하는 코드가 있지만 , 크게 영향이 없어 그대로 진행하였다.
-![vgg_model2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model2.png?raw=true)
+
+![vgg_model2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model2.PNG?raw=true)
+
 처음으로 Google drive 내의 실험을 위한 Custom dataset을 불러오는 작업을 진행하였다.
 Opencv를 이용하여 이미지를 불러온 뒤, 연산량을 줄이기 위해 이미지의 크기를 224로 줄였다.
 (추가적으로 VGGNet은 Input Size가 224로 되어있기에 , 이 또한 해당사항이다. 원본 이미지는 1440x1440)
 그리고 클래스는 총 20종이기 때문에 num_classes 자체도 20으로 지정해주었다.
-![vgg_model3](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model3.png?raw=true)
+
+![vgg_model3](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model3.PNG?raw=true)
+
 불러와진 이미지를 확인해보니 Opencv로 인해 RGB가 아닌 BGR 로 불러와진 것을 확인하였다.
 이는 나중에 test때도 동일할 것으로 판단되어 크게 신경쓰지 않기로 하였다.
 불러온 dataset을 0.64 : 0.16 : 0.2 로 train_val_test split을 진행하였다.
 label은 총 20개로 분류모델을 위해 원핫인코딩을 진행해주었다.
 위의 데이터셋을 불러오는 부분에서 인덱스를 1부터 시작했지만 , 원핫인코딩은 0번인덱스부터 시작하기에
 각각의 인덱스를 -1씩 빼준 모습이다.
-![vgg_model4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model4.png?raw=true)
+
+![vgg_model4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model4.PNG?raw=true)
+
 위의 VGG-16 분석과 동일하게 Depth,kernel_size,activation,FCL 등을 설정한 모습이다.
 논문내의 모델과 완전 동일하다고 설명할 순 없지만 , 최대한 유사하게 구현한 모습이다.
-![vgg_model5](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model5.png?raw=true)
+
+![vgg_model5](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model5.PNG?raw=true)
+
 전체적인 모델의 구조도를 model.summary()를 통해 확인한다.
 전체 파라미터는 약 1.3억개이고 , 마지막 레이어는 총 20개의 클래스를 softmax함수를 통해 분류한다.
-![vgg_model6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model6.png?raw=true)
+
+![vgg_model6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/vgg_model6.PNG?raw=true)
+
 학습 결과를 보면 , AlexNet보다 낮은 accuracy와 업데이트가 되지않는 모습을 보인다.
 이는 적은 dataset을 너무 깊은 depth를 통해 구현하였기에 생긴 vanishing gradient 문제라고 판단된다.
 이를 통해 단순한 Task를 위한 모델은 depth의 깊이를 너무 깊게하지 않으며 , 혹은 이후에 다루게 될 ResNet과 같은
 Technique을 사용해야 한다는 것을 알았다.
+
 ###                              c. ResNet - 신준하
 그림 및 설명
 ###                              d. Ours - 곽민창
