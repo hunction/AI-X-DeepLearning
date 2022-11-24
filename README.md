@@ -148,11 +148,12 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 
 
 ###          c. ResNet - 신준하
-ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을 증가시켰지만, 합성곱층이 20층 이상으로 깊어질수록 Vanishing/Exploding gradient 현상이 발생하여 이를 해결하기 위해 Shortcut connection(Skip connection)을 적용해 성능을 향상시킨 신경망이다.
+ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을 증가시켰지만, 합성곱 층이 20층 이상으로 깊어질수록 Vanishing/Exploding gradient 현상이 발생하여 이를 해결하기 위해 Shortcut connection(Skip connection)을 적용해 성능을 향상시킨 신경망이다.
 
 ![ResNet block](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_block.PNG?raw=true)
 
 위 그림은 ResNet에 새롭게 추가 된 skip connection 구조이다. 두 개의 합성곱 층을 지나는 출력값과 그 층을 skip한 원래 값을 더한 후 Activation function을 지나 출력되게 된다.
+기본적으로 F(x) + x의 수식을 사용하게 되고, F(x)와 x의 차원이 달라질 경우 보통 zero padding을 진행하거나 F(x) + Wx라는 수식을 사용한다.v
 
 ![ResNet-34](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet-34.PNG?raw=true)
 
@@ -162,7 +163,28 @@ ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을
 
 0) Input layer : 기존 VGGnet 구조를 따르기 때문에 Input크기는 224 x 224 x 3 이미지(224 x 224 RGB 이미지)를 입력받을 수 있다.
 
-1) conv1
+1) 1층(conv1) : 이미지를 64개의 7 x 7 커널필터를 이용하여 컨볼루션한다. zero padding을 3만큼 진행하고, stride = 2로 인해 특성맵의 크기는 224 x 224의 절반인 112 x 112로 출력된다. 여기서 모든 합성곱층의 활성화 함수는 ReLU를 이용한다.
+
+2) 1층 -> 2층(maxpooling) : 입력받은 112 x 112 x 64 특성맵을 3 x 3커널을 이용해 max pooling한다. stride = 2로 인해 특성맵의 크기는 56 x 56으로 출력된다.
+
+3) 2층 ~ 7층(conv2_1 ~ conv2_6) : 입력받은 56 x 56 x 64 특성맵을 3 x 3 커널 64개로 컨볼루션한다.(stride = 1, samepadding 진행) 2개의 합성곱 층 묶음마다 ResNet의 핵심인 skip connection이 진행된다.
+
+4) 8층 ~ 9층(conv3_1 ~ conv3_2) : 입력받은 56 x 56 x 64 특성맵을 3 x 3 커널 128개로 컨볼루션한다. 8층에서는 stride = 2로 인해 특성맵의 크기는 28 x 28로 출력된다. 8 ~ 9층에서의 skip connection이 진행될 때, 입력차원(56 x 56)과 F(x)(28 x 28)의 크기를 맞춰주기 위해 56 x 56 x 64 입력 특성맵을 1 x 1 conv, stride = 2를 이용해 특성맵의 크기와 차원(채널)을 맞춰준다.
+
+5) 10층 ~ 15층(conv3_3 ~ conv3_8) : 28 x 28 x 128 특성맵을 3 x 3 커널 128개로 컨볼루션한다.(stride = 1, samepadding 진행) 2개의 합성곱 층 묶음마다 skip connection이 진행된다.
+
+6) 16층 ~ 17층(conv4_1 ~ conv4_2) : 입력받은 28 x 28 x 128 특성맵을 3 x 3 커널 256개로 컨볼루션한다. 16층에서는 stride = 2로 인해 특성맵의 크기는 14 x 14로 출력된다. 16 ~ 17층에서의 skip connection이 진행될 때, 입력차원(28 x 28)과 F(x)(14 x 14)의 크기를 맞춰주기 위해 28 x 28 x 128 입력 특성맵을 1 x 1 conv, stride = 2를 이용해 특성맵의 크기와 차원(채널)을 맞춰준다.
+
+7) 18층 ~ 27층(conv4_3 ~ conv4_12) : 14 x 14 x 256 특성맵을 3 x 3 커널 256개로 컨볼루션한다.(stride = 1, samepadding 진행) 2개의 합성곱 층 묶음마다 skip connection이 진행된다.
+
+8) 28층 ~ 29층(conv5_1 ~ conv5_2) : 입력받은 14 x 14 x 256 특성맵을 3 x 3 커널 512개로 컨볼루션한다. 28층에서는 stride = 2로 인해 특성맵의 크기는 7 x 7로 출력된다. 28 ~ 29층에서의 skip connection이 진행될 때, 입력차원(14 x 14)과 F(x)(7 x 7)의 크기를 맞춰주기 위해 14 x 14 x 256 입력 특성맵을 1 x 1 conv, stride = 2를 이용해 특성맵의 크기와 차원(채널)을 맞춰준다.
+
+9) 30층 ~ 33층(conv5_3 ~ conv5_6) : 7 x 7 x 512 특성맵을 3 x 3 커널 512개로 컨볼루션한다.(stride = 1, samepadding 진행) 2개의 합성곱 층 묶음마다 skip connection이 진행된다.
+
+10) 33층 -> 34층(global average pooling) : 입력받은 7 x 7 x 512 특성맵을 global average pooling 하여 512개의 채널을 1차원으로 flatten 시켜준다.
+
+11) 34층(FC1) : 1 x 512이 1000개의 dense에 Fully connected 되어 softmax 함수를 적용한다. 이는 1000개의 클래스로 분류를 하겠다는 의미이다.
+
 ###          d. Ours - 곽민창
 그림 및 설명
           
