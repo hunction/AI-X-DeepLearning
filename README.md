@@ -153,7 +153,7 @@ ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을
 ![ResNet Block](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_Block.PNG?raw=true)
 
 위 그림은 ResNet에 새롭게 추가 된 skip connection 구조이다. 두 개의 합성곱 층을 지나는 출력값과 그 층을 skip한 원래 값을 더한 후 Activation function을 지나 출력되게 된다.
-기본적으로 F(x) + x의 수식을 사용하게 되고, F(x)와 x의 차원이 달라질 경우 보통 zero padding을 진행하거나 F(x) + Wx라는 수식을 사용한다.v
+기본적으로 F(x) + x의 수식을 사용하게 되고, F(x)와 x의 차원이 달라질 경우 논문에서는 zero padding을 진행하거나 F(x) + Wx라는 수식을 사용하며, 위 그림은 stride = 2인 1 x 1 convolution을 진행하는 모습이다.
 
 ![ResNet-34](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet-34.PNG?raw=true)
 
