@@ -148,18 +148,21 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 
 
 ###          c. ResNet - 신준하
-ResNet은 VGGnet-19에서 더 나은 성능을 위해 층의 깊이만을 증가시켰지만, 합성곱층이 20층 이상으로 깊어질수록 Vanishing/Exploding gradient 현상이 발생하여 이를 해결하기 위해 Shortcut connection(Skip connection)을 적용해 성능을 향상시킨 신경망이다.
+ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을 증가시켰지만, 합성곱층이 20층 이상으로 깊어질수록 Vanishing/Exploding gradient 현상이 발생하여 이를 해결하기 위해 Shortcut connection(Skip connection)을 적용해 성능을 향상시킨 신경망이다.
 
 ![ResNet block](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_block.PNG?raw=true)
 
 위 그림은 ResNet에 새롭게 추가 된 skip connection 구조이다. 두 개의 합성곱 층을 지나는 출력값과 그 층을 skip한 원래 값을 더한 후 Activation function을 지나 출력되게 된다.
 
-![ResNet-34](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet.PNG?raw=true)
+![ResNet-34](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet-34.PNG?raw=true)
 
-![ResNET-34 Architecture]
+![ResNET-34 Architecture](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet-34_Architecture.PNG?raw=true)
 
 전체적인 ResNet의 구조는 아래와 같다.
 
+0) Input layer : 기존 VGGnet 구조를 따르기 때문에 Input크기는 224 x 224 x 3 이미지(224 x 224 RGB 이미지)를 입력받을 수 있다.
+
+1) conv1
 ###          d. Ours - 곽민창
 그림 및 설명
           
