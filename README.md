@@ -149,7 +149,7 @@ AlexNet에 기반하여 네트워크의 깊이( Depth ) 가 모델의 성능에 
 
 ###          c. ResNet - 신준하
 단순히 층을 늘리는것 만으로도 성능의 향상을 보인 VGGNet 개발 이후 "과연 네트워크가 깊어지는것 만으로 성능을 무한히 향상시킬 수 있는가?"에 대한 의문이 제기되었고, 그 결과 층이 20층 이상으로 깊어질수록 기울기가 0으로 수렴하거나 오히려 발산하는 vanishing/exploding gradient 현상이 발생하였다. 이러한 문제를 개선하기위해 shortcut connection(skip connection)을 적용한 ResNet이 개발되었다.
-![Resnet block](http://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Resnet_block.PNG)
+![Resnet block](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Resnet_block.PNG?raw=true)
 ResNet의 구조는 위 그림인 일반적인 CNN의 "main path"와 Skip connection에 의해 연결되는 "short cut"으로 구성되어있다.
 ###          d. Ours - 곽민창
 그림 및 설명
