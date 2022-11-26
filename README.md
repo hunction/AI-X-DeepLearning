@@ -186,8 +186,10 @@ ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을
 11) 34층(FC1) : 1 x 512이 1000개의 dense에 Fully connected 되어 softmax 함수를 적용한다. 이는 1000개의 클래스로 분류를 하겠다는 의미이다.
 
 ###          d. Ours - 곽민창
-그림 및 설명
-          
+Dataset을 팀원끼리 직접 촬영하고, Processing 하여 사용하기 때문에, Sequential 모델을 사용해 여러 층의 모델을 직접 설계하여 몇 가지 case로 실험을 진행하였다. 각 모델들의 구조를 변화하며 생기는 Accuracy 및 Loss의 변화를 관찰하며 최대한 우리의 Dataset에 맞춘 가볍고 성능이 좋은 Model을 설계하려 노력했다.
+
+Case 1) 2 Layer
+![2Layer](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/2Layer.png?raw=true)
           
 #  4. Evaluation & Analysis
 ##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
