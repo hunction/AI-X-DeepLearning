@@ -204,7 +204,7 @@ Case 4) 5 Layer
 
 5개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다. 각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
 
-![case1~4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case1~4.png?raw=true)
+![case1-4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case1-4.png?raw=true)
 
 Case 5) Activation Function : Relu
 
