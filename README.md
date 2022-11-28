@@ -188,34 +188,53 @@ ResNet은 VGGnet-19 구조에서 더 나은 성능을 위해 층의 깊이만을
 ###          d. Ours - 곽민창
 Dataset을 팀원끼리 직접 촬영하고, Processing 하여 사용하기 때문에, Sequential 모델을 사용해 여러 층의 모델을 직접 설계하여 몇 가지 case로 실험을 진행하였다. 각 모델들의 구조를 변화하며 생기는 Accuracy 및 Loss의 변화를 관찰하며 최대한 우리의 Dataset에 맞춘 가볍고 성능이 좋은 Model을 설계하려 노력했다.
 
-Case 1) 2 Layer
+처음은 Depth의 변화를 위주로 모델의 성능차이를 비교하였다.
+filter_size는 5x5로 고정시켜 놓고, 커널의 갯수는 입력시 32개
+이후로는 64개를 고정 시키며 Layer를 쌓았다.
+기존의 ReLU보다 성능이 좋은 (Vanishing gradient를 피하기 위함)
+ELU함수를 사용하여 skip connection을 대신하였다.
 
-2개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다. 각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
-
-Case 2) 3 Layer
-
-3개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다. 각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
-
-Case 3) 4 Layer
-
-4개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다. 각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
-
-Case 4) 5 Layer
-
-5개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다. 각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
+마지막 Dense Layer 이전에는 Global Average Pooling을 통해
+너무 많은 파라미터는 제한하였다.
 
 ![case1-4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case1-4.png?raw=true)
 
+모델을 시각화 하기 위해 Netron을 사용했다.
+
+
+Case 1) 2 Layer
+
+2개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다.
+각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
+
+Case 2) 3 Layer
+
+3개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다.
+각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
+
+Case 3) 4 Layer
+
+4개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다.
+각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
+
+Case 4) 5 Layer
+
+5개의 Conv2D Layer를 설계하였다. Convolution layer 이후에는 각각 max pooling 한다.
+각각의 Activation Function은 ELU를 사용했으며, 출력 전 Dense 하는 것으로 구성되어있다.
+
+![case5~6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case5~6.PNG?raw=true)
+
 Case 5) Activation Function : Relu
 
-Case 3에서 사용했던 3 Layer의 Sequential 구조의 각 Convolution layer의 Activation Function을 Relu 함수로 변경하여 구성하였다. Activation Function 이외의 모든 변인은 통제되어있기 때문에 Activation Function에 따른 Accuracy와 Loss 값의 차이를 알 수 있다.
+Case 3에서 사용했던 3 Layer의 Sequential 구조의 각 Convolution layer의 Activation Function을 Relu 함수로 변경하여 구성하였다. 
+Activation Function 이외의 모든 변인은 통제되어있기 때문에 Activation Function에 따른 Accuracy와 Loss 값의 차이를 알 수 있다.
 
 Case 6) Activation Function : Sigmoid
 
-Case 3에서 사용했던 3 Layer의 Sequential 구조의 각 Convolution layer의 Activation Function을 Sigmoid 함수로 변경하여 구성하였다. Activation Function 이외의 모든 변인은 통제되어있기 때문에 Activation Function에 따른 Accuracy와 Loss 값의 차이를 알 수 있다.
+Case 3에서 사용했던 3 Layer의 Sequential 구조의 각 Convolution layer의 Activation Function을 Sigmoid 함수로 변경하여 구성하였다. 
+Activation Function 이외의 모든 변인은 통제되어있기 때문에 Activation Function에 따른 Accuracy와 Loss 값의 차이를 알 수 있다.
 
-![case5~6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case5~6.PNG?raw=true)
-          
+
 #  4. Evaluation & Analysis
 ##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
 ###                              a. AlexNet - 홍노준
