@@ -284,6 +284,8 @@ Technique을 사용해야 한다는 것을 알았다.
 ###                              c. ResNet - 신준하
 코드는 google의 colab으로 진행하였고, 주요 코드마다 결과를 확인하였다.
 
+![image](https://user-images.githubusercontent.com/87685924/205059104-9f8d6d4a-81e5-4470-8a19-230c6b0b4759.png)
+
 ###                              d. Ours - 곽민창
 그림 및 설명
         
