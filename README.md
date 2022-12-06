@@ -238,7 +238,23 @@ Activation Function 이외의 모든 변인은 통제되어있기 때문에 Acti
 #  4. Evaluation & Analysis
 ##        - Evaluation : 각각의 모델의 validation accuracy 및 실전 test accuracy 기술
 ###                              a. AlexNet - 홍노준
-그림 및 설명
+
+![Alex1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex1.png)
+
+![Alex2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex2.png)
+
+![Alex3](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex3.png)
+
+![Alex4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex4.png)
+
+![Alex5](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex5.png)
+
+![Alex6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex6.png)
+
+![Alex7](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex7.png)
+
+
+
 ###                              b. VGG-19 - 배성현
 
 코드 및 실험 결과에 따른 분석으로 진행하였다.
