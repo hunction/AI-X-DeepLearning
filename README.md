@@ -339,7 +339,7 @@ model구성은 keras에 있는 ResNet50을 불러와 사용했고, 마지막 poo
 
 model의 summary이다. 앞서 말한대로 ResNet50, GlobalAverage, FC3층이 포함되어 있는 것을 확인 할 수 있다. 파라미터는 총 25,958,548개 이며, 학습되는 파라미터 수는 25,902,868개 이다.
 
-![image](https://raw.githubusercontent.com/hunction/AI-X-DeepLearning/main/Markdown_Img/ResNet_8.PNG)
+![image](https://raw.githubusercontent.com/hunction/AI-X-DeepLearning/main/Markdown_Img/ResNet_9.PNG)
 
 model의 훈련을 위해 사용 할 loss는 분류를 위한 CE이고, optimizer는 adam, 성능 확인 기준은 정확도로 설정하였다. epoch은 150회로 설정하였고, batch_size는 위에서 설정한대로 사용한다. 이때 한 epoch 훈련 후 모델에 validation dataset을 넣어 test 성능을 파악하였다.
 
