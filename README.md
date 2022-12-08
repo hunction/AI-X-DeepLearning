@@ -394,8 +394,27 @@ Sequential Model에 각 앞서 나눴던 Case에 맞는 모델을 설계해 구�
 
 Adam Optimizer를 사용하였고, 학습은 batch : 32, epoch : 10으로 진행하였다. 학습 History는 모두 hist Array에 저장하도록 하였다.
 
+[case 1] 2 - Layer
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case1.png?raw=true)
+
+[case 2] 3 - Layer
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case2.png?raw=true)
+
+[case 3] 4 - Layer
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case3.png?raw=true)
+
+[case 4] 5 - Layer
 
 
+
+[case 5] Activation Function : ReLU
+
+
+
+[case 6] Activation Function : Sigmoid
 
 
         
