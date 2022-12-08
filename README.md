@@ -302,6 +302,9 @@ Technique을 사용해야 한다는 것을 알았다.
 
 ![image](https://user-images.githubusercontent.com/87685924/205059104-9f8d6d4a-81e5-4470-8a19-230c6b0b4759.png)
 
+필요한 라이브러리들을 import 해주었고, google drive에 저장해 놓은 dataset을 이용하기 위해 drive 모듈로 drive mount 해주었다.
+
+
 ###                              d. Ours - 곽민창
 그림 및 설명
         
