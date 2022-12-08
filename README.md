@@ -304,7 +304,26 @@ Technique을 사용해야 한다는 것을 알았다.
 
 필요한 라이브러리들을 import 해주었고, google drive에 저장해 놓은 dataset을 이용하기 위해 drive 모듈로 drive mount 해주었다.
 
-!.[image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_2.PNG?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_2.PNG?raw=true)
+
+훈련에 이용 될 dataset 위치
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_3.PNG?raw=true)
+
+label별로 순서대로 data를 불러오고, 이미지 크기를 224 x 224 3channel로 맞춰주었다. 이후 X에는 img(이미지), Y에는 label(정답값)을 리스트형태로 저장한 후 np.array를 이용해 배열로 바꿔주었다.
+class는 cafe는 1부터 10, restaurant는 11부터 20이 되도록 설정해주었다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_4.PNG?raw=true)
+
+모델의 input의 형태는 224 x 224 x 3, batchsize = 4, class개수는 20(cafe 10 + restaurant 10)으로 맞춰주었다.
+이후 X내에 있는 data img들 중 22번 index의 이미지를 확인해보았다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_5.PNG?raw=true)
+
+X와 Y에 있는 데이터를 split함수를 이용해 train : validation : test 비율을 64:16:20으로 나누었다.
+이후 각 데이터셋의 값들을 255로 나누어 주고, 분류를 위해 one-hot encoding을 실시했다.
+
+
 
 ###                              d. Ours - 곽민창
 그림 및 설명
