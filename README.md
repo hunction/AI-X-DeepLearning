@@ -323,8 +323,40 @@ class는 cafe는 1부터 10, restaurant는 11부터 20이 되도록 설정해주
 X와 Y에 있는 데이터를 split함수를 이용해 train : validation : test 비율을 64:16:20으로 나누었다.
 이후 각 데이터셋의 값들을 255로 나누어 주고, 분류를 위해 one-hot encoding을 실시했다.
 
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_6.PNG?raw=true)
 
+model구성은 keras에 있는 ResNet50을 불러와 사용했고, 마지막 pooling층은 GlobalAveragePooling으로 설정하였다. 이때 FullyConected층이 없어 3개의 FC층을 추가로 만들어 주었고 상위 두 FC층은 relu, 마지막 FC층은 softmax를 이용하였다.
 
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_7.PNG?raw=true)
+
+                                                  .
+
+                                                  .
+
+                                                  .
+
+![image](https://raw.githubusercontent.com/hunction/AI-X-DeepLearning/main/Markdown_Img/ResNet_8.PNG)
+
+model의 summary이다. 앞서 말한대로 ResNet50, GlobalAverage, FC3층이 포함되어 있는 것을 확인 할 수 있다. 파라미터는 총 25,958,548개 이며, 학습되는 파라미터 수는 25,902,868개 이다.
+
+![image](https://raw.githubusercontent.com/hunction/AI-X-DeepLearning/main/Markdown_Img/ResNet_8.PNG)
+
+model의 훈련을 위해 사용 할 loss는 분류를 위한 CE이고, optimizer는 adam, 성능 확인 기준은 정확도로 설정하였다. epoch은 150회로 설정하였고, batch_size는 위에서 설정한대로 사용한다. 이때 한 epoch 훈련 후 모델에 validation dataset을 넣어 test 성능을 파악하였다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_10.PNG?raw=true)
+
+150회의 epoch가 끝나기 직전 11번의 model 훈련 성능이다. validation accuracy가 100%까지 나오는 모습을 확인 할 수 있다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_11.PNG?raw=true)
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_12.PNG?raw=true)
+
+성능을 확인하기 위해 정확도와, loss를 시각적으로 표현하였다. 전체적으로 train은 튀는 현상 없이 꾸준하게 정확도는 증가하고 loss는 감소하면서 두 값 모두 수렴하는 것을 볼 수 있다.
+하지만 validation에 대한 정확도와, loss는 꾸준히 좋은쪽으로 수렴하고 있지만, 가끔씩 튀는 현상이 일어났다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
+
+훈련시킨 model을 test 데이터를 이용하여 평가해보았다. 성능이 좋게 나왔고, 이 모델의 아키텍쳐와 가중치들을 가지고있는 파일을 저장하였다.
 ###                              d. Ours - 곽민창
 그림 및 설명
         
