@@ -408,13 +408,17 @@ Adam Optimizer를 사용하였고, 학습은 batch : 32, epoch : 10으로 진행
 
 [case 4] 5 - Layer
 
-
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case4.png?raw=true)
 
 [case 5] Activation Function : ReLU
 
-
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case5.png?raw=true)
 
 [case 6] Activation Function : Sigmoid
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/case6.png?raw=true)
+
+[결과 정리]
 
 
         
