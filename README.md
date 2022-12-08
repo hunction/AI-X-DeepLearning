@@ -420,7 +420,15 @@ Adam Optimizer를 사용하였고, 학습은 batch : 32, epoch : 10으로 진행
 
 [결과 정리]
 
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/result_1.png?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/result_2.png?raw=true)
 
+Convolution Layer의 개수를 변화하여 학습을 진행했던 Case 1 ~ 4의 Epoch별 Accuracy와 Loss를 나타낸 그래프는 다음과 같다. Convolution Layer가 많아질수록 더 빨리 Accuracy가 오르고, Loss는 줄어드는 것을 확인할 수 있다. 또한, 10 Epoch 후의 결과 또한 Convolution Layer가 5개 일때 가장 이상적인 것을 볼 수 있다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/result_3.png?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/result_4.png?raw=true)
+
+Activation Function을 ELU, ReLU, Sigmoid로 변화하여 학습을 진행했던 Case 2, 5, 6의 Epoch 별 Accuracy와 Loss를 나타낸 그래프는 다음과 같다. ELU와 ReLU Activation Function을 사용했을 때 Accuracy와 Loss 모두 비슷하게 좋은 결과를 보여주고 있지만, Sigmoid Activation Function을 사용했을 경우 결과가 좋지 않은 것을 볼 수 있다.
         
 ##        - Analysis : 모델 별 학습 파라미터의 갯수 및 학습시간,  동작시간 기술
         
