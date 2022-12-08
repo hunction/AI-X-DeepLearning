@@ -353,10 +353,12 @@ model의 훈련을 위해 사용 할 loss는 분류를 위한 CE이고, optimize
 
 성능을 확인하기 위해 정확도와, loss를 시각적으로 표현하였다. 전체적으로 train은 튀는 현상 없이 꾸준하게 정확도는 증가하고 loss는 감소하면서 두 값 모두 수렴하는 것을 볼 수 있다.
 하지만 validation에 대한 정확도와, loss는 꾸준히 좋은쪽으로 수렴하고 있지만, 가끔씩 튀는 현상이 일어났다.
+train상태에서 어느정도 epoch 이후로는 거의 수렴하여 변화가 없는것으로 보였는데, 이는 epoch를 조금 더 줄여서 훈련을 시켜도 되는 것으로 판단이 되었다.
 
 ![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
 
 훈련시킨 model을 test 데이터를 이용하여 평가해보았다. 성능이 좋게 나왔고, 이 모델의 아키텍쳐와 가중치들을 가지고있는 파일을 저장하였다.
+
 ###                              d. Ours - 곽민창
 그림 및 설명
         
