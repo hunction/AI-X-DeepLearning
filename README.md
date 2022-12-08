@@ -378,19 +378,19 @@ DataSet에서 나뉘어있던 식당과 카페의 이미지 데이터를 합치�
 
 학습에 대한 검증은 validation data로, 실전 정확도는 test data로 검증하기 위하여 train_test_split을 하여 데이터를 train, validation, test로 나누어주었다.
 
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_5.png.PNG?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_5.png?raw=true)
 
 원본 DataSet의 개수가 부족하기 때문에 증강 기법을 적용하였다. ImageGenerator를 이용하여 Data를 Augumentation 해주고, 매 Epoch 마다 다른 이미지 데이터가 들어가도록 했다.
 
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_6.png.PNG?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_6.png?raw=true)
 
 Sequential Model에 각 앞서 나눴던 Case에 맞는 모델을 설계해 구성하였다. 각 convolution layer에는 elu activation function을 사용하였다.
 
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_7.png.PNG?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_7.png?raw=true)
 
 첫 번째 Case에서의 모델 구성 Summary이다. 총 Parameter는 54,996개를 사용하는 것을 볼 수 있다.
 
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_8.png.PNG?raw=true)
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_8.png?raw=true)
 
 Adam Optimizer를 사용하였고, 학습은 batch : 32, epoch : 10으로 진행하였다. 학습 History는 모두 hist Array에 저장하도록 하였다.
 
