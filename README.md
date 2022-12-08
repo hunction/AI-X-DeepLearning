@@ -361,16 +361,42 @@ train상태에서 어느정도 epoch 이후로는 거의 수렴하여 변화가 
 
 ###                              d. Ours - 곽민창
 코드는 Jupyter notebook을 사용하였고, 각 Case에 맞는 코드를 작성하여 각각 학습을 진행하고, matplotlib을 이용하여 History를 시각화하였다.
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_1.png?raw=true)
+
 필요한 라이브러리들을 import 해 주었다.
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
-이미지를 불러온 뒤, 해당 폴더명과 같은 라벨 Y를 반환해 주었다. 또한, 원본 DataSet의 이미지는 1440 * 1440 * 3의 형태이기 때문에 OpenCV를 이용하여 224 * 224 * 3으로 변환해주었다.
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_2.png?raw=true)
+
+이미지를 불러온 뒤, 해당 폴더명과 같은 라벨 Y를 반환해 주었다. 또한, 원본 DataSet의 이미지는 1440 * 1440 * 3의 형태이기 때문에 OpenCV를 이용하여 200 * 200 * 3으로 변환해주었다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_3.png?raw=true)
+
 DataSet에서 나뉘어있던 식당과 카페의 이미지 데이터를 합치고, 각각 Label을 매겨 학습할 수 있도록 Numpy Array로 만들어 주었다. 그후 원핫 인코딩을 진행하였다.
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_4.png?raw=true)
+
 학습에 대한 검증은 validation data로, 실전 정확도는 test data로 검증하기 위하여 train_test_split을 하여 데이터를 train, validation, test로 나누어주었다.
-![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/ResNet_13.PNG?raw=true)
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_5.png.PNG?raw=true)
+
 원본 DataSet의 개수가 부족하기 때문에 증강 기법을 적용하였다. ImageGenerator를 이용하여 Data를 Augumentation 해주고, 매 Epoch 마다 다른 이미지 데이터가 들어가도록 했다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_6.png.PNG?raw=true)
+
+Sequential Model에 각 앞서 나눴던 Case에 맞는 모델을 설계해 구성하였다. 각 convolution layer에는 elu activation function을 사용하였다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_7.png.PNG?raw=true)
+
+첫 번째 Case에서의 모델 구성 Summary이다. 총 Parameter는 54,996개를 사용하는 것을 볼 수 있다.
+
+![image](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Ours_8.png.PNG?raw=true)
+
+Adam Optimizer를 사용하였고, 학습은 batch : 32, epoch : 10으로 진행하였다. 학습 History는 모두 hist Array에 저장하도록 하였다.
+
+
+
+
 
         
 ##        - Analysis : 모델 별 학습 파라미터의 갯수 및 학습시간,  동작시간 기술
