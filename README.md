@@ -439,7 +439,7 @@ AlexNet :        코딩 관련 블로그 - https://bskyvision.com/421, AlexNet �
 
 VGG-19 :            논문분석 블로그 - https://bskyvision.com/504    네트워크 생성 - https://minjoos.tistory.com/6
         
-ResNet50 :          네트워크 설명 - https://jisuhan.tistory.com/71     논문 - "Deep Residual Learning for Image Recognition"(rXiv:1512.03385v1 [cs.CV] 10 Dec 2015)
+ResNet50 :          네트워크 설명 - https://jisuhan.tistory.com/71     논문 - "Deep Residual Learning for Image Recognition"(arXiv:1512.03385v1 [cs.CV] 10 Dec 2015)
 
 #  6. Conclusion: Discussion
 - 하이퍼 파라미터의 변화에 따른 각각의 성능변화에 대한 정리
