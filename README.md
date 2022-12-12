@@ -245,7 +245,7 @@ Activation Function 이외의 모든 변인은 통제되어있기 때문에 Acti
 
 ![Alex2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex2.png)
 
- label별로 순서대로 data를 불러오고, 이후 X에는 img(이미지), Y에는 label(정답값)을 리스트형태로 저장한 후, class는 cafe는 1부터 10, restaurant는 11부터 20이 되도록 설정했습니다. 원본 DataSet의 이미지는 1440*1440*3의 형태이기 때문에 OpenCV를 이용하여 224*224*3으로 변환했습니다.
+ label별로 순서대로 data를 불러오고, 이후 X에는 img(이미지), Y에는 label(정답값)을 리스트형태로 저장한 후, class는 cafe는 1부터 10, restaurant는 11부터 20이 되도록 설정했습니다. 원본 DataSet의 이미지는 1440 * 1440 * 3의 형태이기 때문에 OpenCV를 이용하여 224 * 224 * 3으로 변환했습니다.
 
 ![Alex3](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex3.png)
 
