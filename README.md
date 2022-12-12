@@ -69,7 +69,7 @@ filter size , activation function , depth 등의 하이퍼 파라미터의 조�
 ##          Experiment Conditions ( 네트워크 구조 및 특이사항 )
 
 ###          a. AlexNet - 홍노준
-AlexNet은 2012년에 열린 ILSVRC 대회에서 TOP 5 test error 15.4%를 기록해 1위를 차지란 네트워크로 CNN의 우수함을 전세계에 입증한 네트워크이다. AlexNet 네트워크이후로 CNN 구조의 GPU 구현과 dropout 적용이 보편화되었다.
+AlexNet은 2012년에 열린 ILSVRC 대회에서 TOP 5 test error 15.4%를 기록해 1위를 차지한 네트워크로 CNN의 우수함을 전세계에 입증한 네트워크이다. AlexNet 네트워크이후로 CNN 구조의 GPU 구현과 dropout 적용이 보편화되었다.
 
 AlexNet의 구조는 LeNet-5와 크게 다르지 않다. 위아래로 filter가 절반씩 나뉘어 2개의 GPU로 병렬연산을 수행하는 것이 가장 큰 특징이라고 할 수 있다. 총 8개의 레이어로 구성되어 있으며, 부분적으로 max-pooling가 적용된 Convolution layer가 5개, fully-connected layers 3개로 구성되어있다. 2, 4, 5번째 Convolution layer는 전 단계에서 같은 채널의 특성맵만 연결되어 있는 반면에, 3번째 Convolution layer는 전 단계의 두 채널의 특성 맵과 모두 연결되어있다. Input image는 RGB 이미지로 224×224×3이다.
 ![Alexnet1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Alexnet1.png)
