@@ -241,15 +241,25 @@ Activation Function 이외의 모든 변인은 통제되어있기 때문에 Acti
 
 ![Alex1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex1.png)
 
+ AlexNet의 테스트를 위해 Google Colab에서 Tensorflow framework를 활용했습니다.
+
 ![Alex2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex2.png)
 
+ label별로 순서대로 data를 불러오고, 이후 X에는 img(이미지), Y에는 label(정답값)을 리스트형태로 저장한 후, class는 cafe는 1부터 10, restaurant는 11부터 20이 되도록 설정했습니다. 원본 DataSet의 이미지는 1440*1440*3의 형태이기 때문에 OpenCV를 이용하여 224*224*3으로 변환했습니다.
+
 ![Alex3](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex3.png)
+
+ 분류를 위해 원핫인코딩을 했습니다. 전의 데이터셋을 불러오면서 인덱스를 1씩 더하고 시작했기 때문에 인덱스를 맞추기 위해, 각각의 인덱스를 –1씩 뺐습니다.
 
 ![Alex4](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex4.png)
 
 ![Alex5](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex5.png)
 
+전체적인 모델의 구조도를 model.summary()를 통해 확인했습니다. 전체 파라미터는 약 7.1억 개이며, 마지막 레이어는 총 20개의 클래스를 softmax함수를 통해 분류했습니다.
+
 ![Alex7](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex7.png)
+
+10번 훈련한 model의 훈련 성능입니다. validation accuracy가 94.64%까지 나오는 모습을 확인할 수 있습니다.
 
 
 
