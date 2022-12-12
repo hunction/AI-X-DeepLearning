@@ -72,9 +72,11 @@ filter size , activation function , depth 등의 하이퍼 파라미터의 조�
 AlexNet은 2012년에 열린 ILSVRC 대회에서 TOP 5 test error 15.4%를 기록해 1위를 차지한 네트워크로 CNN의 우수함을 전세계에 입증한 네트워크이다. AlexNet 네트워크이후로 CNN 구조의 GPU 구현과 dropout 적용이 보편화되었다.
 
 AlexNet의 구조는 LeNet-5와 크게 다르지 않다. 위아래로 filter가 절반씩 나뉘어 2개의 GPU로 병렬연산을 수행하는 것이 가장 큰 특징이라고 할 수 있다. 총 8개의 레이어로 구성되어 있으며, 부분적으로 max-pooling가 적용된 Convolution layer가 5개, fully-connected layers 3개로 구성되어있다. 2, 4, 5번째 Convolution layer는 전 단계에서 같은 채널의 특성맵만 연결되어 있는 반면에, 3번째 Convolution layer는 전 단계의 두 채널의 특성 맵과 모두 연결되어있다. Input image는 RGB 이미지로 224×224×3이다.
+
 ![Alexnet1](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Alexnet1.png)
 
 AlexNet을 자세히 살펴보면 다음과 같이 [Input layer]-[Conv1]-[MaxPool1]-[Norm1]-[Conv2]-[MaxPool2]-[Norm2]-[Conv3]-[Conv4]-[Conv5]-[MaxPool3]-[FC1]-[FC2]-[Output layer] 로 구성되어 있다. 여기서 Norm은 수렴속도를 높이기 위해 local response normalization을 하는 것으로 이 local response normalization은 특성맵의 차원을 변화시키지 않는다는 특징을 가지고 있다.
+
 ![Alexnet2](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/Alexnet2.png)
 
 전체적인 층의 구조는 다음과 같으며 Input image는 RGB 이미지로 224×224×3이다.
