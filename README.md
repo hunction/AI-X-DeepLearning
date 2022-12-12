@@ -249,8 +249,6 @@ Activation Function 이외의 모든 변인은 통제되어있기 때문에 Acti
 
 ![Alex5](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex5.png)
 
-![Alex6](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex6.png)
-
 ![Alex7](https://github.com/hunction/AI-X-DeepLearning/blob/main/Markdown_Img/alex7.png)
 
 
