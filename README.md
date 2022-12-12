@@ -1,6 +1,7 @@
 # AI-X-DeepLearning
 ### Final Project
 
+Video : https://youtu.be/8zEq1a3dJ0M
 
 # Title : 신입생을 위한 학교주변 카페 및 식당 분류
 
